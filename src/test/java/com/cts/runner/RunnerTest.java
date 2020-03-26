@@ -6,7 +6,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @CucumberOptions(features = { "src/main/resources/feature/" }, glue = {
-		"/com/cts/Stepdefinition" },
+		"/com/cts/Stepdefinition" },plugin= {"html:reports/","pretty"},
 //tags = { "@valid" },
 monochrome = true, dryRun=false)
 

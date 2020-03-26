@@ -61,7 +61,7 @@ public class logaStepDefinition {
 
 	@Then("the application navigate to next page contains page header as {string}")
 	public void the_application_navigate_to_next_page_contains_page_header_as(String string) {
-		SigninPage.getPageHeader(driver);
+		driver.quit();
 	}
 
 	@When("click on signin button and User have to get the account details from ExcelSheet {string} and sheetname {string} and click on Register Button")
