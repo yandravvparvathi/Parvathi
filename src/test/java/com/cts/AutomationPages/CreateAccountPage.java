@@ -1,4 +1,4 @@
-package com.cts.pages;
+package com.cts.AutomationPages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,26 +6,33 @@ import org.openqa.selenium.support.ui.Select;
 
 public class CreateAccountPage {
 
-	private static By clickOnRadioButtonLoc = By.id("id_gender2");
-	private static By enterFirstNameLoc = By.id("customer_firstname");
-	private static By enterLastNameLoc = By.id("customer_lastname");
-	private static By enterPasswordLoc = By.id("passwd");
-	private static By addressLoc = By.id("address1");
-	private static By cityLoc = By.id("city");
-	private static By selectStateLoc = By.id("id_state");
-	private static By postCodeloc = By.id("postcode");
-	private static By countryLoc = By.id("id_country");
-	private static By mobileNum = By.id("phone_mobile");
-	private static By address1Loc = By.id("alias");
-	private static By registerLoc = By.id("submitAccount");
-	private static By selectDayLoc = By.id("days");
-	private static By selectMonthLoc = By.id("months");
-	private static By selectYearLoc = By.id("years");
-
-	public static void fillRegForm(WebDriver driver, String firstname, String lastname, String password, String address,
-			String city, String pincode, String mobilenum, String address1) {
-
+	private  By clickOnRadioButtonLoc = By.id("id_gender2");
+	private  By enterFirstNameLoc = By.id("customer_firstname");
+	private  By enterLastNameLoc = By.id("customer_lastname");
+	private  By enterPasswordLoc = By.id("passwd");
+	private  By addressLoc = By.id("address1");
+	private  By cityLoc = By.id("city");
+	private  By selectStateLoc = By.id("id_state");
+	private  By postCodeloc = By.id("postcode");
+	private  By countryLoc = By.id("id_country");
+	private  By mobileNum = By.id("phone_mobile");
+	private  By address1Loc = By.id("alias");
+	private  By registerLoc = By.id("submitAccount");
+	private  By selectDayLoc = By.id("days");
+	private  By selectMonthLoc = By.id("months");
+	private  By selectYearLoc = By.id("years");
+	
+	private WebDriver driver;
+	public CreateAccountPage(WebDriver driver) {
+		this.driver=driver;
+	}
+	
+	
+	public  void fillRegForm(String firstname, String lastname, String password, String address,
+	String city, String pincode, String mobilenum, String address1) {
+		
 		driver.findElement(clickOnRadioButtonLoc).click();
+		
 		driver.findElement(enterFirstNameLoc).sendKeys(firstname);
 
 		driver.findElement(enterLastNameLoc).sendKeys(lastname);

@@ -4,9 +4,9 @@ Feature: Scenarios
 Background: 
 	Given User have a browser with logaAutomationpage  
 Scenario: SignInCredential 
-	When The user click on signIn 
-	When The user enter emailId 'sindhujuttiga@gmail.com' and Password 'sindhuja' and click on SignIn 
-	Then The user should access to nextPage 
+When The user click on signIn 
+When The user enter emailId 'sindhujuttiga@gmail.com' and Password 'sindhuja' and click on SignIn 
+Then The user should access to nextPage 
 	
 
 Scenario: SelectionCredential
