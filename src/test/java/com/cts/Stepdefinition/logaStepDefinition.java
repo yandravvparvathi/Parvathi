@@ -56,11 +56,13 @@ public class logaStepDefinition {
 		HomePage signIn = new HomePage(driver);
 		signIn.clickOnSignIn();
 		SigninPage details = new SigninPage(driver);
-		details.enterEmail(str[0][1]);
+		details.enterEmail(str[0][0]);
 		details.clickOnCreateAccount();
         CreateAccountPage excelDetails = new CreateAccountPage(driver);
 		excelDetails.fillRegForm(str[0][1], str[0][2], str[0][3], str[0][4], str[0][5], str[0][6], str[0][7],
 				str[0][8]);
+		excelDetails.clickOnCheckBox();
+		excelDetails.clickOnRegButton();
 	}
 //Application navigates to next page
 	@Then("the application navigate to next page contains page header as {string}")

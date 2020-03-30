@@ -21,6 +21,8 @@ public class CreateAccountPage {
 	private  By selectDayLoc = By.id("days");
 	private  By selectMonthLoc = By.id("months");
 	private  By selectYearLoc = By.id("years");
+	private By clickOnCheckBoxLoc=By.id("newsletter");
+	private By accErrorTextMsgLoc=By.xpath("//li[contains(text(),'An account using this email address has already been registered. ')]//parent::ol");
 	
 	private WebDriver driver;
 	public CreateAccountPage(WebDriver driver) {
@@ -54,7 +56,17 @@ public class CreateAccountPage {
 
 		driver.findElement(mobileNum).sendKeys(mobilenum);
 		driver.findElement(address1Loc).sendKeys(address1);
+		}
+	public void clickOnRegButton() {
 		driver.findElement(registerLoc).click();
-
+	}
+	public void clickOnCheckBox() {
+		driver.findElement(clickOnCheckBoxLoc).click();
+		
+	}
+	public String accErrorMsg() {
+		String actualText=driver.findElement(accErrorTextMsgLoc).getText();
+		return actualText;
+		
 	}
 }
